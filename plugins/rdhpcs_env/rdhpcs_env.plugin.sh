@@ -16,7 +16,7 @@ pathmunge () {
 }
 
 # Get the host domain
-HOSTDOMAIN=$(hostname | awk '{print $1}' | cut -f2- -d.)
+HOSTDOMAIN=$(hostname -f | awk '{print $1}' | cut -f2- -d.)
 HOST=$(hostname -s)
 
 RDHPCS_ENV_DIR=$(dirname $BASH_SOURCE)
