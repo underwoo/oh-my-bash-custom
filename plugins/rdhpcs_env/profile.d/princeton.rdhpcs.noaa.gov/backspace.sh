@@ -4,4 +4,3 @@ then
   # Correct the backspace key
   stty erase ^?
 fi
-
