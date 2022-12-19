@@ -1,0 +1,13 @@
+GAEA_DTN=be56688a-99e0-11ea-8eca-02c81b96a709
+PPAN_DTN=a97e450e-0f1f-11eb-abe1-0213fe609573
+NIAGARA_UNT=0026a4e4-afd2-11ea-beea-0e716405a293
+NIAGARA_DTN=21467dd0-afd6-11ea-8f12-0a21f750d19b
+
+export GAEA_DTN
+export PPAN_DTN
+export NIAGARA_UNT
+export NIAGARA_DTN
+
+# mlt-4743591 Personal Endpoint
+MLT_EP=4520c5b2-3459-11ed-89c3-ede5bae4f491
+export MLT_EP
