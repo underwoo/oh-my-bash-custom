@@ -19,7 +19,7 @@ PROMPT_DIRTRIM=2
 bind Space:magic-space
 
 # Turn on recursive globbing (enables ** to recurse all directories)
-shopt -s globstar 2> /dev/null                                                                                   
+shopt -s globstar 2> /dev/null
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
@@ -27,10 +27,14 @@ shopt -s nocaseglob;
 ## SMARTER TAB-COMPLETION (Readline bindings) ##
 
 # Perform file completion in a case insensitive fashion
-bind "set completion-ignore-case on"
+if [[ "$CASE_SENSITIVE" == "true" ]]; then
+  bind "set completion-ignore-case on"
+fi
 
 # Treat hyphens and underscores as equivalent
-bind "set completion-map-case on"
+if [[ "$HYPHEN_INSENSITIVE" == "true" ]]; then
+  bind "set completion-map-case on"
+fi
 
 # Display matches for ambiguous patterns at first tab press
 bind "set show-all-if-ambiguous on"
@@ -40,7 +44,7 @@ bind "set mark-symlinked-directories on"
 
 ## BETTER DIRECTORY NAVIGATION ##
 
-if [[ "$ENABLE_CORRECTION" == "true" ]]; then 
+if [[ "$ENABLE_CORRECTION" == "true" ]]; then
   # Prepend cd to directory names automatically
   shopt -s autocd 2> /dev/null
   # Correct spelling errors during tab-completion
