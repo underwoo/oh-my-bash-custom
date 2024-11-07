@@ -1,0 +1,17 @@
+# This is an example of how to call the *.logout.sh
+# script in this plugin, and all other plugins that
+# may supply a .logout.sh script.
+#
+# Check each plugin for a *.logout.sh script, and 
+# source it.
+for p in ${plugins[@]} 
+do 
+  if [ -e $OSH_CUSTOM/plugins/$p/$p.logout.sh ]
+  then 
+    . $OSH_CUSTOM/plugins/$p/$p.logout.sh
+  elif [ -e $OSH/plugins/$p/$p.logout.sh ]
+  then 
+    . $OSH/plugins/$p/$p.logout.sh
+  fi
+done
+

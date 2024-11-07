@@ -43,7 +43,6 @@ then
     else
       if [ x"${SSH_AGENT_PID:+set}" = "xset" -a x"${SSH_AGENT_COUNT:+set}" = "xset" ]
       then
-        echo Counting
         # Increase the SSH_AGENT_COUNT
         sed -i -e "s/^SSH_AGENT_COUNT=${SSH_AGENT_COUNT}/SSH_AGENT_COUNT=$(expr $SSH_AGENT_COUNT + 1)/" ${agent_env}
         export SSH_AGENT_COUNT=$(expr ${SSH_AGENT_COUNT} + 1)
