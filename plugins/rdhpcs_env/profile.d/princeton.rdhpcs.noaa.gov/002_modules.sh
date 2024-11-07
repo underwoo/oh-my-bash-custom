@@ -1,14 +1,13 @@
-# Setup the Environment Modules
+# Setup the LMOD Environment Modules
 
 # Clean up the some of the modules environment variables to re-initialize
-# modules.
+# modules.  This is needed since the default is still the standard
+# environment modules
 unset MODULE_VERSION
 unset MODULE_VERSION_STACK
 
-# As GFDL installs the module version in /usr/local/Modules/<version>
-# with a symlink `default` pointing to the default version, set
-# MODULESHOME to point to the GFDL default module install location
-MODULESHOME=/usr/local/Modules/default
+# MODULESHOME to point to the LMOD installation
+MODULESHOME=/usr/local/lmod/lmod
 
 # Check if MODULESHOME exists
 if [ ! -z ${MODULESHOME+x} ]
