@@ -35,6 +35,9 @@ then
       fi
       if [ ${skip_agent:-no} = "no" ]
       then
+        # Make sure an old agent file was not left around, which can
+        # happen if the connection is simply lost.
+        \rm -f ${agent_env}
         # Start a new agent
         (umask 066; ssh-agent > ${agent_env})
         echo "SSH_AGENT_COUNT=1; export SSH_AGENT_COUNT;" >> ${agent_env}
