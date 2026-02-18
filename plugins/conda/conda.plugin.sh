@@ -1,4 +1,10 @@
-__conda_base='/app/conda/miniforge'
+if [[ "$(domainname -f)" =~ ncrc.gov ]]
+then
+    __conda_base='/usw/conda/miniforge'
+else
+    __conda_base='/app/conda/miniforge'
+fi
+
 __conda_setup="$('$__conda_basebin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
