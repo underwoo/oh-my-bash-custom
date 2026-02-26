@@ -21,6 +21,11 @@ then
     else
       . ${MODULESHOME}/init/sh
     fi
+    LMOD_ADMIN_FILE="$(dirname $MODULESHOME)/etc/admin.list"
+    LMOD_PACKAGE_PATH="$(dirname $MODULESHOME)/etc"
+    export MODULESHOME
+    export LMOD_ADMIN_FILE
+    export LMOD_PACKAGE_PATH
     unset shell
   else
     unset MODULESHOME
