@@ -1,16 +1,28 @@
-__conda_base='/app/conda/miniforge'
-__conda_setup="$('$__conda_basebin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "$__conda_base/etc/profile.d/conda.sh" ]; then
-        . "$__conda_base/etc/profile.d/conda.sh"
-    else
-        export PATH="$__conda_base/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-unset __conda_base
-
-## If desired, I can set aliases and other settings here.
-
+#! bash oh-my-bash.module
+#
+# Aliases
+# From https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/conda/conda.plugin.zsh
+#
+alias cna='conda activate'
+alias cnab='conda activate base'
+alias cncf='conda env create -f'
+alias cncn='conda create -y -n'
+alias cnconf='conda config'
+alias cncp='conda create -y -p'
+alias cncr='conda create -n'
+alias cncss='conda config --show-source'
+alias cnde='conda deactivate'
+alias cnel='conda env list'
+alias cni='conda install'
+alias cniy='conda install -y'
+alias cnl='conda list'
+alias cnle='conda list --export'
+alias cnles='conda list --explicit > spec-file.txt'
+alias cnr='conda remove'
+alias cnrn='conda remove -y --all -n'
+alias cnrp='conda remove -y --all -p'
+alias cnry='conda remove -y'
+alias cnsr='conda search'
+alias cnu='conda update'
+alias cnua='conda update --all'
+alias cnuc='conda update conda'
