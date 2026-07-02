@@ -1,1 +1,0 @@
-export FLINTHOST=warehouse
