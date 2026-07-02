@@ -1,3 +1,5 @@
+#! bash oh-my-bash.module
+
 # Connect to an already running ssh-agent, or start one
 #
 # Check if an agent is already running and usable
